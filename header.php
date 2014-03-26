@@ -26,11 +26,13 @@
       <meta name="author" content="">
 
       <!-- Styles -->
-      <link href="css/bootstrap.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+      <link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker.min.css"/>
 
       <script src="js/jquery.js"></script>
       <script src="js/bootstrap.js"></script>
       <script src="js/bootstrap-inputmask.min.js"></script>
+      <script src="js/bootstrap-datepicker.js"></script>
       <!--<script src="js/jquery.maskedinput.js"></script>-->
       <script src="js/funcoes.js"></script>
   </head>
