@@ -54,6 +54,8 @@
                       <li <?php if($pagina_atual=="materias.php") echo 'class="active"'; ?>><a href="materias.php">Matérias</a></li>
                       <li <?php if($pagina_atual=="professores.php") echo 'class="active"'; ?>><a href="professores.php">Professores</a></li>
                       <li <?php if($pagina_atual=="alunos.php") echo 'class="active"'; ?>><a href="alunos.php">Alunos</a></li>
+                      <li <?php if($pagina_atual=="turmas.php") echo 'class="active"'; ?>><a href="turmas.php">Turmas</a></li>
+                      <li <?php if($pagina_atual=="salas.php") echo 'class="active"'; ?>><a href="salas.php">Salas</a></li>
                       
                   </ul>
 
