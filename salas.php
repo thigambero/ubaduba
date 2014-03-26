@@ -1,10 +1,9 @@
 <?php include "header.php";?>
 
 <script>
-	function verificaFormMateria(cad){ // validar
-		with(document.formMateria){ // with
-			if(nome.value == ''){alert('O preenchimento do nome é obrigatório !');nome.focus();return false;}
-		  	if(creditos.value == ''){alert('O preenchimento do número de créditos é obrigatório !');creditos.focus();return false;}	
+	function verificaFormSala(cad){ // validar
+		with(document.formSala){ // with
+			if(nome.value == ''){alert('O preenchimento do nome da sala é obrigatório !');nome.focus();return false;}
 			return true;
 		}
 	} 
@@ -16,32 +15,41 @@ if($_SESSION['permissao'] > 0)
 	if(isset($_POST['enviar']))
 	{	
 		$nome = $_POST['nome'];
-		$creditos = $_POST['creditos'];
 
 		if($_POST['oque'] == "novo"){
 			$db = conectaBD();
-			$query = "INSERT INTO materias (nome, creditos) VALUES ('$nome', '$creditos')";
+			$query = "SELECT nome FROM salas WHERE nome = '$nome'";
 			$result = mysql_query($query);
-			desconectaBD($db);
-			if($result)$aviso_sucesso = "Matéria cadastrada com sucesso!";
-			else $aviso_erro = "Houve um erro no cadastro, tente novamente!";
+
+			//Se houver sala com esse RA, não faz o cadastro
+			if(mysql_num_rows($result) > 0){
+				desconectaBD($db);
+				echo "<script>alert('Esta sala já esta cadastrada');</script>";
+			}
+			else{
+				$query = "INSERT INTO salas (nome) VALUES ('$nome')";
+				$result = mysql_query($query);
+				desconectaBD($db);
+				if($result)$aviso_sucesso = "Sala cadastrada com sucesso!";
+				else $aviso_erro = "Houve um erro no cadastro, tente novamente!";
+			}
 		}
 		else{
 			$id = $_POST['oque'];
 			$db = conectaBD();
-			$query = "UPDATE materias SET nome = '$nome', fk_curso = '$curso', creditos = '$creditos' WHERE pk_materia = '$id'";
+			$query = "UPDATE salas SET nome = '$nome', email = '$email', sexo = '$sexo', fk_sala = '$sala' WHERE pk_sala = '$id'";
 			$result = mysql_query($query);
 			desconectaBD($db);
-			if($result)$aviso_sucesso = "Matéria atualizada com sucesso";
+			if($result)$aviso_sucesso = "Sala atualizado com sucesso";
 			else $aviso_erro = "Houve um erro na edicão, tente novamente!";
 		}
 	}
 
-	//Se o ID for numérico, é para edição, portanto faz o select do materia
+	//Se o ID for numérico, é para edição, portanto faz o select do sala
 	if(is_numeric($_GET['id']))
 	{
 		$db = conectaBD();
-		$query="SELECT * FROM `materias` WHERE `pk_materia` = '".$_GET['id']."' limit 1";
+		$query="SELECT * FROM salas WHERE pk_sala = '".$_GET['id']."' limit 1";
 		$result = mysql_query($query);
 		$row = mysql_fetch_array($result);
 		desconectaBD($db);
@@ -65,16 +73,16 @@ if($_SESSION['permissao'] > 0)
 
 		if($_GET['id'] == "novo")
 		{
-				echo '<h3>Cadastro de Matéria</h3>';
+				echo '<h3>Cadastro de Sala</h3>';
 		}
 		else if(is_numeric($_GET['id']))
 		{
-				echo '<h3>Edição de Matéria</h3>';
+				echo '<h3>Edição de Sala</h3>';
 		}
 	?>
 		<br />
 				
-		<form action="materias.php" method="post" id="formMateria"  name="formMateria" class="form-horizontal" onSubmit="return verificaFormMateria(this);">
+		<form action="salas.php" method="post" id="formSala"  name="formSala" class="form-horizontal" onSubmit="return verificaFormSala(this);">
 				
 			<input type="hidden" name="oque" value="<?php echo $_GET['id']; ?>" />
 
@@ -84,16 +92,12 @@ if($_SESSION['permissao'] > 0)
 						<label class ="control-label"></label>
 						<div class="controls"><h4>Informações</h4></div>
 					</div>
-		
+
 					 <div class="control-group">
 						<label class ="control-label" >Nome:</label>
-						<div class="controls"><input class="input-xlarge" type="text" id="nome" name="nome" value="<?php echo $row['nome']; ?>" maxlength="100" required/></div>
+						<div class="controls"><input class="input-xlarge" type="text" id="nome" name="nome" value="<?php echo $row['nome']; ?>" maxlength="50" required/></div>
 					</div>
-					
-					<div class="control-group">
-						<label class ="control-label">Créditos:</label>
-						<div class="controls"><input class="input-small" type="number" name="creditos" value="<?php echo $row['creditos']; ?>"/></div>
-					</div>
+			
 
 					<div class="control-group">
 						<label class ="control-label"></label>
@@ -114,7 +118,7 @@ if($_SESSION['permissao'] > 0)
 	}else
 	{ ?>
 
-			<h2>Matérias</h2>
+			<h2>Salas</h2>
 
 			<div class="row">
 				<div class="span6">
@@ -128,7 +132,7 @@ if($_SESSION['permissao'] > 0)
 					<?php if($_SESSION['permissao'] == 10){?>
 						<ul class="pager">
 						  <li class="next">
-						    <a href="materias.php?id=novo">Cadastrar novo &rarr;</a>
+						    <a href="salas.php?id=novo">Cadastrar novo &rarr;</a>
 						  </li>
 						</ul>
 					<?php } ?>
@@ -138,8 +142,7 @@ if($_SESSION['permissao'] > 0)
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>Nome</th>
-						<th>Créditos</th>
+						<th>Sala</th>
 						<?php
 							if($_SESSION['permissao'] == 10)
 								echo '<th></th>';
@@ -149,18 +152,17 @@ if($_SESSION['permissao'] > 0)
 				<tbody>
 				<?php
 				$db = conectaBD();
-				$query="SELECT m.pk_materia, m.nome, m.creditos FROM materias m WHERE 1 order by m.nome";
+				$query="SELECT pk_sala, nome FROM salas  WHERE 1 order by nome";
 				$result = mysql_query($query);
 				desconectaBD($db);
 				while($row = mysql_fetch_array($result)) {
 
 				echo '
-						<tr class="itens_tabela" >
-						<td onclick="location.href = \'materia.php?id='.$row['pk_materia'].'\';">' . $row['nome'] . '</td>
-						<td onclick="location.href = \'materia.php?id='.$row['pk_materia'].'\';">' . $row['creditos'] . '</td>
+						<tr class="itens_tabela">
+						<td>' . $row['nome'] . '</td>
 						';
 						if($_SESSION['permissao'] == 10)
-							echo '<td><a href="materias.php?id=' . $row['pk_materia'] . '"><i class = "icon-pencil"></i></a></td>
+							echo '<td><a href="salas.php?id=' . $row['pk_sala'] . '"><i class = "icon-pencil"></i></a></td>
 					</tr>
 					';
 				}
