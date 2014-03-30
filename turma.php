@@ -278,8 +278,8 @@ if($_SESSION['permissao'] > 0)
 						 <div class="control-group">
 						   <label class ="control-label">Início:</label>
 						   <div class="controls">
-						     <div id="datetimepicker" class="input-append date">
-						         <input class="input-xlarge" name="inicio" type="text" id="inicio" value="<?php echo $row['data']?>"></input>  
+						     <div id="datetimepicker" class="input-append date" data-date-maxviewmode="days">
+						         <input class="input-xlarge" name="inicio" type="text" id="inicio" value="<?php echo $row['data']?>" readonly>
 						         <span class="add-on">
 						           <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
 						         </span>
@@ -300,6 +300,7 @@ if($_SESSION['permissao'] > 0)
 						
 					
 						<?php
+
 						$db = conectaBD();
 						$query = "SELECT * FROM cursos";
 						$result = mysql_query($query);
