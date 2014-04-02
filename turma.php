@@ -3,6 +3,21 @@ include "header.php";
 
 if($_SESSION['permissao'] > 0)
 {		
+	?>
+	<script>
+		function verificaFormAluno(cad){ // validar
+			with(document.formAluno){ // with
+				if(ra.value == ''){alert('O preenchimento do ra é obrigatório !');ra.focus();return false;}
+				if(senha.value == ''){alert('O preenchimento da senha é obrigatório !');senha.focus();return false;}	
+				if(nome.value == ''){alert('O preenchimento do nome é obrigatório !');nome.focus();return false;}
+			  	if(email.value == ''){alert('O preenchimento do e-mail é obrigatório !');email.focus();return false;}	
+			  	if(curso.value == '0'){alert('O preenchimento do curso é obrigatório !');curso.focus();return false;}	
+				return true;
+			}
+		} 
+	</script>
+
+	<?php
 	if(is_numeric($_GET['id']) && !isset($_GET['nova_aula']) && !isset($_GET['adicionar_alunos']))
 	{
 		$pk_turma = $_GET['id'];
@@ -265,7 +280,7 @@ if($_SESSION['permissao'] > 0)
 			$row = mysql_fetch_array($result);
 			$num_turma = $row['numero'];
 			?>
-			<form action="materias.php" method="post" id="formMateria"  name="formMateria" class="form-horizontal" onSubmit="return verificaFormMateria(this);">
+			<form action="materias.php" method="post" id="formMateria" name="formMateria" class="form-horizontal" onSubmit="return verificaFormMateria(this);">
 				<input type="hidden" name="oque" value="<?php echo $_GET['id']; ?>" />
 
 				<div class="row">
@@ -274,49 +289,58 @@ if($_SESSION['permissao'] > 0)
 							<label class ="control-label"></label>
 							<div class="controls"><h4>Nova aula - Turma <?php echo $row['numero']?></h4></div>
 						</div>
-			
-						 <div class="control-group">
-						   <label class ="control-label">Início:</label>
-						   <div class="controls">
-						     <div id="datetimepicker" class="input-append date">
-						         <input class="input-xlarge" name="inicio" type="text" id="inicio" value="<?php echo $row['data']?>"></input>  
-						         <span class="add-on">
-						           <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
-						         </span>
-						       </div>
-						   </div>
-						 </div>
-						 <div class="control-group">
-						   <label class ="control-label">Fim:</label>
-						   <div class="controls">
-						     <div id="datetimepicker2" class="input-append date">
-						         <input class="input-xlarge" name="inicio" type="text" id="inicio" value="<?php echo $row['data']?>"></input>  
-						         <span class="add-on">
-						           <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
-						         </span>
-						       </div>
-						   </div>
-						 </div>
-						
-					
-						<?php
-						$db = conectaBD();
-						$query = "SELECT * FROM cursos";
-						$result = mysql_query($query);
-						?>
+
 						<div class="control-group">
-							<label class ="control-label">Curso:</label>
+							<label class ="control-label"></label>
+							 <div class="controls"><input type="checkbox" name="dia"> Segunda-Feira</div>
+							 <div class="controls"><input type="checkbox" name="dia"> Terça-Feira</div>
+							 <div class="controls"><input type="checkbox" name="dia"> Quarta-Feira</div>
+							 <div class="controls"><input type="checkbox" name="dia"> Quinta-Feira</div>
+							 <div class="controls"><input type="checkbox" name="dia"> Sexta-Feira</div>
+						</div>
+
+						<div class="control-group">
+							<label class ="control-label">Inicio:</label>
 							<div class="controls">
-								<select name="curso">
-										<option value="0">Selecione um Curso</option>
+								<select class="input-mini" name="hora_inicio">
+								    <?php
+									for($i = 8; $i<22; $i++){ ?>
+								    	<option value="<?php echo $i;?>" <?php if($row['hora_inicio'] == "<?php echo $i;?>") echo 'selected'; ?>><?php echo $i;?></option>
+								    <?php 
+									}?>
+								</select>
+								:
+								<select class="input-mini" name="minuto_inicio">
 									<?php
-									while($curso = mysql_fetch_array($result)){ ?>
-								    	<option value="<?php echo $curso['pk_curso']?>" <?php if($curso['pk_curso'] == $row['fk_curso']) echo 'selected'; ?>><?php echo $curso['nome'];?></option>
-								    	<?php
-								    } ?>
+									for($i = 0; $i<60; $i++){ ?>
+								    	<option value="<?php echo $i;?>" <?php if($row['minuto_inicio'] == "<?php echo $i;?>") echo 'selected'; ?>><?php echo $i;?></option>
+								    <?php 
+									}?>
 								</select>
 							</div>
 						</div>
+
+						<div class="control-group">
+							<label class ="control-label">Fim:</label>
+							<div class="controls">
+								<select class="input-mini" name="hora_fim">
+								    <?php
+									for($i = 8; $i<23; $i++){ ?>
+								    	<option value="<?php echo $i;?>" <?php if($row['hora_fim'] == "<?php echo $i;?>") echo 'selected'; ?>><?php echo $i;?></option>
+								    <?php 
+									}?>
+								</select>
+								:
+								<select class="input-mini" name="minuto_fim">
+									<?php
+									for($i = 0; $i<60; $i++){ ?>
+								    	<option value="<?php echo $i;?>" <?php if($row['minuto_fim'] == "<?php echo $i;?>") echo 'selected'; ?>><?php echo $i;?></option>
+								    <?php 
+									}?>
+								</select>
+							</div>
+						</div>
+				
 
 						<div class="control-group">
 							<label class ="control-label"></label>

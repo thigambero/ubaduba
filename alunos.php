@@ -4,6 +4,7 @@
 	function verificaFormAluno(cad){ // validar
 		with(document.formAluno){ // with
 			if(ra.value == ''){alert('O preenchimento do ra é obrigatório !');ra.focus();return false;}
+			if(senha.value == ''){alert('O preenchimento da senha é obrigatório !');senha.focus();return false;}	
 			if(nome.value == ''){alert('O preenchimento do nome é obrigatório !');nome.focus();return false;}
 		  	if(email.value == ''){alert('O preenchimento do e-mail é obrigatório !');email.focus();return false;}	
 		  	if(curso.value == '0'){alert('O preenchimento do curso é obrigatório !');curso.focus();return false;}	
@@ -21,6 +22,8 @@ if($_SESSION['permissao'] > 0)
 		$sexo = $_POST['sexo'];
 		$email = $_POST['email'];
 		$curso = $_POST['curso'];
+		if($_POST['senha'] == "Não Alterar")$senha = "";
+		else $senha = md5($_POST['senha']);
 
 		if($_POST['oque'] == "novo"){
 			$ra = $_POST['ra'];
@@ -37,9 +40,13 @@ if($_SESSION['permissao'] > 0)
 			else{
 				$query = "INSERT INTO alunos (ra, fk_curso, nome, sexo, email ) VALUES ('$ra', '$curso', '$nome', '$sexo', '$email')";
 				$result = mysql_query($query);
-				desconectaBD($db);
-				if($result)$aviso_sucesso = "Aluno cadastrado com sucesso!";
+				if($result){
+					$query = "INSERT INTO admins (usuario, senha, nome, permissao) VALUES ('$ra', '$senha', '$nome', '1')";
+					$result = mysql_query($query);
+					$aviso_sucesso = "Aluno cadastrado com sucesso!";
+				}
 				else $aviso_erro = "Houve um erro no cadastro, tente novamente!";
+				desconectaBD($db);
 			}
 		}
 		else{
@@ -47,6 +54,10 @@ if($_SESSION['permissao'] > 0)
 			$db = conectaBD();
 			$query = "UPDATE alunos SET nome = '$nome', email = '$email', sexo = '$sexo', fk_curso = '$curso' WHERE ra = '$id'";
 			$result = mysql_query($query);
+			if($senha != ""){
+				$query = "UPDATE admins SET senha = '$senha' WHERE usuario = '$id'";
+				$result2 = mysql_query($query);
+			}
 			desconectaBD($db);
 			if($result)$aviso_sucesso = "Aluno atualizado com sucesso";
 			else $aviso_erro = "Houve um erro na edicão, tente novamente!";
@@ -103,6 +114,11 @@ if($_SESSION['permissao'] > 0)
 					 <div class="control-group">
 						<label class ="control-label" >RA:</label>
 						<div class="controls"><input class="input-small" type="text" id="ra" name="ra" value="<?php echo $row['ra']; ?>" maxlength="8" <?php if($row['ra'] != "")echo "disabled"; ?> required/></div>
+					</div>
+
+					 <div class="control-group">
+						<label class ="control-label" >Senha:</label>
+						<div class="controls"><input class="input-xlarge" type="text" id="senha" name="senha" value="<?php if($row['ra']!="")echo 'Não Alterar';?>" maxlength="100" required/></div>
 					</div>
 
 					 <div class="control-group">
