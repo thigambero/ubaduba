@@ -3832,3 +3832,589 @@
 [26-Mar-2014 16:59:09 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 177
 [26-Mar-2014 16:59:09 Brazil/East] PHP Stack trace:
 [26-Mar-2014 16:59:09 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:45:38 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 14:45:38 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:45:38 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\index.php:0
+[02-Apr-2014 14:45:38 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\index.php:2
+[02-Apr-2014 14:45:38 Brazil/East] PHP Notice:  Undefined index: permissao in D:\wamp\www\ubaduba\header.php on line 45
+[02-Apr-2014 14:45:38 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:45:38 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\index.php:0
+[02-Apr-2014 14:45:38 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\index.php:2
+[02-Apr-2014 14:45:38 Brazil/East] PHP Notice:  Undefined index: admin in D:\wamp\www\ubaduba\header.php on line 114
+[02-Apr-2014 14:45:38 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:45:38 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\index.php:0
+[02-Apr-2014 14:45:38 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\index.php:2
+[02-Apr-2014 14:45:38 Brazil/East] PHP Notice:  Undefined index: permissao in D:\wamp\www\ubaduba\index.php on line 4
+[02-Apr-2014 14:45:38 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:45:38 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\index.php:0
+[02-Apr-2014 14:49:10 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 14:49:10 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:49:10 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\index.php:0
+[02-Apr-2014 14:49:10 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\index.php:2
+[02-Apr-2014 14:49:30 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 14:49:30 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:49:30 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\salas.php:0
+[02-Apr-2014 14:49:30 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\salas.php:1
+[02-Apr-2014 14:49:30 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\salas.php on line 49
+[02-Apr-2014 14:49:30 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:49:30 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\salas.php:0
+[02-Apr-2014 14:49:30 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\salas.php on line 71
+[02-Apr-2014 14:49:30 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:49:30 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\salas.php:0
+[02-Apr-2014 14:49:32 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 14:49:32 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:49:32 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:49:32 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\turmas.php:1
+[02-Apr-2014 14:49:32 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\turmas.php on line 49
+[02-Apr-2014 14:49:32 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:49:32 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:49:32 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\turmas.php on line 69
+[02-Apr-2014 14:49:32 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:49:32 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:49:37 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 14:49:37 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:49:37 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:49:37 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\turmas.php:1
+[02-Apr-2014 14:49:37 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 97
+[02-Apr-2014 14:49:37 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:49:37 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:49:40 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 115
+[02-Apr-2014 14:49:40 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:49:40 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:49:40 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 115
+[02-Apr-2014 14:49:40 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:49:40 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:49:40 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 115
+[02-Apr-2014 14:49:40 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:49:40 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:49:42 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 135
+[02-Apr-2014 14:49:42 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:49:42 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:49:42 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 135
+[02-Apr-2014 14:49:42 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:49:42 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:49:42 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 135
+[02-Apr-2014 14:49:42 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:49:42 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:49:44 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:49:44 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:49:44 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:49:44 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:49:44 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:49:44 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:49:44 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:49:44 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:49:44 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:49:44 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:49:44 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:49:44 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:49:44 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:49:44 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:49:44 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:49:44 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 166
+[02-Apr-2014 14:49:44 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:49:44 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:49:44 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 177
+[02-Apr-2014 14:49:44 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:49:44 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:50:31 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 14:50:31 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:50:31 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:50:31 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\turmas.php:1
+[02-Apr-2014 14:50:33 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\turmas.php on line 49
+[02-Apr-2014 14:50:33 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:50:33 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:50:33 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\turmas.php on line 69
+[02-Apr-2014 14:50:33 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:50:33 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:51:06 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 14:51:06 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:51:06 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:51:06 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\turmas.php:1
+[02-Apr-2014 14:51:06 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 97
+[02-Apr-2014 14:51:06 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:51:06 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:51:10 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 115
+[02-Apr-2014 14:51:10 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:51:10 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:51:10 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 115
+[02-Apr-2014 14:51:10 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:51:10 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:51:10 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 115
+[02-Apr-2014 14:51:10 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:51:10 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:51:11 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 135
+[02-Apr-2014 14:51:11 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:51:11 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:51:11 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 135
+[02-Apr-2014 14:51:11 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:51:11 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:51:11 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 135
+[02-Apr-2014 14:51:11 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:51:11 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:51:13 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:51:13 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:51:13 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:51:13 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:51:13 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:51:13 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:51:13 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:51:13 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:51:13 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:51:13 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:51:13 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:51:13 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:51:13 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:51:13 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:51:13 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:51:13 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 166
+[02-Apr-2014 14:51:13 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:51:13 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:51:13 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 177
+[02-Apr-2014 14:51:13 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:51:13 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:52:51 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 14:52:51 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:52:51 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:52:51 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\turmas.php:1
+[02-Apr-2014 14:52:51 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 92
+[02-Apr-2014 14:52:51 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:52:51 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:52:53 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 110
+[02-Apr-2014 14:52:53 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:52:53 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:52:53 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 110
+[02-Apr-2014 14:52:53 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:52:53 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:52:53 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 110
+[02-Apr-2014 14:52:53 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:52:53 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:52:55 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 130
+[02-Apr-2014 14:52:55 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:52:55 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:52:55 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 130
+[02-Apr-2014 14:52:55 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:52:55 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:52:55 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 130
+[02-Apr-2014 14:52:55 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:52:55 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:52:56 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 150
+[02-Apr-2014 14:52:56 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:52:56 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:52:56 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 150
+[02-Apr-2014 14:52:56 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:52:56 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:52:56 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 150
+[02-Apr-2014 14:52:56 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:52:56 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:52:56 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 150
+[02-Apr-2014 14:52:56 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:52:56 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:52:56 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 150
+[02-Apr-2014 14:52:56 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:52:56 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:52:56 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 161
+[02-Apr-2014 14:52:56 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:52:56 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:52:56 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 172
+[02-Apr-2014 14:52:56 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:52:56 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:53:19 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 14:53:19 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:53:19 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:53:19 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\turmas.php:1
+[02-Apr-2014 14:53:21 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\turmas.php on line 44
+[02-Apr-2014 14:53:21 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:53:21 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:53:21 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\turmas.php on line 64
+[02-Apr-2014 14:53:21 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:53:21 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:53:44 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 14:53:44 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:53:44 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:53:44 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\turmas.php:1
+[02-Apr-2014 14:53:46 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\turmas.php on line 44
+[02-Apr-2014 14:53:46 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:53:46 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:53:46 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\turmas.php on line 64
+[02-Apr-2014 14:53:46 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:53:46 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:54:26 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 14:54:26 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:54:26 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:54:26 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\turmas.php:1
+[02-Apr-2014 14:54:26 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 92
+[02-Apr-2014 14:54:26 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:54:26 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:54:28 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 110
+[02-Apr-2014 14:54:28 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:54:28 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:54:28 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 110
+[02-Apr-2014 14:54:28 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:54:28 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:54:28 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 110
+[02-Apr-2014 14:54:28 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:54:28 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:54:30 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 130
+[02-Apr-2014 14:54:30 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:54:30 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:54:30 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 130
+[02-Apr-2014 14:54:30 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:54:30 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:54:30 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 130
+[02-Apr-2014 14:54:30 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:54:30 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:54:32 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 150
+[02-Apr-2014 14:54:32 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:54:32 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:54:32 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 150
+[02-Apr-2014 14:54:32 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:54:32 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:54:32 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 150
+[02-Apr-2014 14:54:32 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:54:32 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:54:32 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 150
+[02-Apr-2014 14:54:32 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:54:32 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:54:32 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 150
+[02-Apr-2014 14:54:32 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:54:32 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:54:32 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 161
+[02-Apr-2014 14:54:32 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:54:32 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:54:32 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 172
+[02-Apr-2014 14:54:32 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:54:32 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:55:45 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 14:55:45 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:55:45 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:55:45 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\turmas.php:1
+[02-Apr-2014 14:55:45 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 92
+[02-Apr-2014 14:55:45 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:55:45 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:55:47 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 110
+[02-Apr-2014 14:55:47 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:55:47 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:55:47 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 110
+[02-Apr-2014 14:55:47 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:55:47 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:55:47 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 110
+[02-Apr-2014 14:55:47 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:55:47 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:55:49 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 130
+[02-Apr-2014 14:55:49 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:55:49 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:55:49 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 130
+[02-Apr-2014 14:55:49 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:55:49 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:55:49 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 130
+[02-Apr-2014 14:55:49 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:55:49 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:55:53 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 150
+[02-Apr-2014 14:55:53 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:55:53 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:55:53 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 150
+[02-Apr-2014 14:55:53 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:55:53 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:55:53 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 150
+[02-Apr-2014 14:55:53 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:55:53 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:55:53 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 150
+[02-Apr-2014 14:55:53 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:55:53 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:55:53 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 150
+[02-Apr-2014 14:55:53 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:55:53 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:55:53 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 161
+[02-Apr-2014 14:55:53 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:55:53 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:55:53 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 172
+[02-Apr-2014 14:55:53 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:55:53 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:56:09 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 14:56:09 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:56:09 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:56:09 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\turmas.php:1
+[02-Apr-2014 14:56:09 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 97
+[02-Apr-2014 14:56:09 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:56:09 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:56:12 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 115
+[02-Apr-2014 14:56:12 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:56:12 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:56:12 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 115
+[02-Apr-2014 14:56:12 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:56:12 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:56:12 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 115
+[02-Apr-2014 14:56:12 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:56:12 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:56:17 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 135
+[02-Apr-2014 14:56:17 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:56:17 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:56:17 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 135
+[02-Apr-2014 14:56:17 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:56:17 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:56:17 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 135
+[02-Apr-2014 14:56:17 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:56:17 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:56:19 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:56:19 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:56:19 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:56:19 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:56:19 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:56:19 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:56:19 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:56:19 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:56:19 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:56:19 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:56:19 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:56:19 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:56:19 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:56:19 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:56:19 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:56:19 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 166
+[02-Apr-2014 14:56:19 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:56:19 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:56:19 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 177
+[02-Apr-2014 14:56:19 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:56:19 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:56:52 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 14:56:52 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:56:52 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:56:52 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\turmas.php:1
+[02-Apr-2014 14:56:52 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\turmas.php on line 49
+[02-Apr-2014 14:56:52 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:56:52 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:56:52 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\turmas.php on line 69
+[02-Apr-2014 14:56:52 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:56:52 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:57:07 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 14:57:07 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:57:07 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:57:07 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\turmas.php:1
+[02-Apr-2014 14:57:07 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\turmas.php on line 49
+[02-Apr-2014 14:57:07 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:57:07 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:57:07 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\turmas.php on line 69
+[02-Apr-2014 14:57:07 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:57:07 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:57:45 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 14:57:45 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:57:45 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:57:45 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\turmas.php:1
+[02-Apr-2014 14:57:45 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 97
+[02-Apr-2014 14:57:45 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:57:45 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:57:47 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 115
+[02-Apr-2014 14:57:47 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:57:47 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:57:47 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 115
+[02-Apr-2014 14:57:47 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:57:47 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:57:47 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 115
+[02-Apr-2014 14:57:47 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:57:47 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:57:49 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 135
+[02-Apr-2014 14:57:49 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:57:49 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:57:49 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 135
+[02-Apr-2014 14:57:49 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:57:49 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:57:49 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 135
+[02-Apr-2014 14:57:49 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:57:49 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:57:50 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:57:50 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:57:50 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:57:50 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:57:50 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:57:50 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:57:50 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:57:50 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:57:50 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:57:50 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:57:50 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:57:50 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:57:50 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:57:50 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:57:50 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:57:50 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 166
+[02-Apr-2014 14:57:50 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:57:50 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:57:50 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 177
+[02-Apr-2014 14:57:50 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:57:50 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:58:09 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 14:58:09 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:58:09 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:58:09 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\turmas.php:1
+[02-Apr-2014 14:58:11 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\turmas.php on line 49
+[02-Apr-2014 14:58:11 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:58:11 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:58:11 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\turmas.php on line 69
+[02-Apr-2014 14:58:11 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:58:11 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:58:20 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 14:58:20 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:58:20 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:58:20 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\turmas.php:1
+[02-Apr-2014 14:58:20 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 97
+[02-Apr-2014 14:58:20 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:58:20 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:58:22 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 115
+[02-Apr-2014 14:58:22 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:58:22 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:58:22 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 115
+[02-Apr-2014 14:58:22 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:58:22 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:58:22 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 115
+[02-Apr-2014 14:58:22 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:58:22 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:58:24 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 135
+[02-Apr-2014 14:58:24 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:58:24 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:58:24 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 135
+[02-Apr-2014 14:58:24 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:58:24 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:58:24 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 135
+[02-Apr-2014 14:58:24 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:58:24 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:58:26 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:58:26 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:58:26 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:58:26 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:58:26 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:58:26 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:58:26 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:58:26 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:58:26 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:58:26 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:58:26 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:58:26 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:58:26 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 155
+[02-Apr-2014 14:58:26 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:58:26 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:58:26 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 166
+[02-Apr-2014 14:58:26 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:58:26 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:58:26 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\turmas.php on line 177
+[02-Apr-2014 14:58:26 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:58:26 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:58:33 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 14:58:33 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:58:33 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:58:33 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\turmas.php:1
+[02-Apr-2014 14:58:35 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\turmas.php on line 49
+[02-Apr-2014 14:58:35 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:58:35 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:58:35 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\turmas.php on line 69
+[02-Apr-2014 14:58:35 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:58:35 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 14:58:43 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 14:58:43 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:58:43 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\alunos.php:0
+[02-Apr-2014 14:58:43 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\alunos.php:1
+[02-Apr-2014 14:58:43 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\alunos.php on line 57
+[02-Apr-2014 14:58:43 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:58:43 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\alunos.php:0
+[02-Apr-2014 14:58:43 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\alunos.php on line 79
+[02-Apr-2014 14:58:43 Brazil/East] PHP Stack trace:
+[02-Apr-2014 14:58:43 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\alunos.php:0
+[02-Apr-2014 15:01:05 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 15:01:05 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:01:05 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\index.php:0
+[02-Apr-2014 15:01:05 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\index.php:2
+[02-Apr-2014 15:01:09 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 15:01:09 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:01:09 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\cursos.php:0
+[02-Apr-2014 15:01:09 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\cursos.php:1
+[02-Apr-2014 15:01:09 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\cursos.php on line 49
+[02-Apr-2014 15:01:09 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:01:09 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\cursos.php:0
+[02-Apr-2014 15:01:09 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\cursos.php on line 71
+[02-Apr-2014 15:01:09 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:01:09 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\cursos.php:0
+[02-Apr-2014 15:01:12 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 15:01:12 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:01:12 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\index.php:0
+[02-Apr-2014 15:01:12 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\index.php:2
+[02-Apr-2014 15:01:14 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 15:01:14 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:01:14 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\cursos.php:0
+[02-Apr-2014 15:01:14 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\cursos.php:1
+[02-Apr-2014 15:01:14 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\cursos.php on line 49
+[02-Apr-2014 15:01:14 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:01:14 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\cursos.php:0
+[02-Apr-2014 15:01:14 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\cursos.php on line 71
+[02-Apr-2014 15:01:14 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:01:14 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\cursos.php:0
+[02-Apr-2014 15:01:16 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 15:01:16 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:01:16 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\cursos.php:0
+[02-Apr-2014 15:01:16 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\cursos.php:1
+[02-Apr-2014 15:01:16 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\cursos.php on line 49
+[02-Apr-2014 15:01:16 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:01:16 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\cursos.php:0
+[02-Apr-2014 15:01:16 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\cursos.php on line 71
+[02-Apr-2014 15:01:16 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:01:16 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\cursos.php:0
+[02-Apr-2014 15:01:19 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 15:01:19 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:01:19 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\cursos.php:0
+[02-Apr-2014 15:01:19 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\cursos.php:1
+[02-Apr-2014 15:01:19 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\cursos.php on line 98
+[02-Apr-2014 15:01:19 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:01:19 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\cursos.php:0
+[02-Apr-2014 15:01:22 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 15:01:22 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:01:22 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\cursos.php:0
+[02-Apr-2014 15:01:22 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\cursos.php:1
+[02-Apr-2014 15:01:25 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\cursos.php on line 49
+[02-Apr-2014 15:01:25 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:01:25 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\cursos.php:0
+[02-Apr-2014 15:01:25 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\cursos.php on line 71
+[02-Apr-2014 15:01:25 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:01:25 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\cursos.php:0
+[02-Apr-2014 15:01:28 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 15:01:28 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:01:28 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\materias.php:0
+[02-Apr-2014 15:01:28 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\materias.php:1
+[02-Apr-2014 15:01:28 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\materias.php on line 41
+[02-Apr-2014 15:01:28 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:01:28 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\materias.php:0
+[02-Apr-2014 15:01:28 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\materias.php on line 63
+[02-Apr-2014 15:01:28 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:01:28 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\materias.php:0
+[02-Apr-2014 15:01:32 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 15:01:32 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:01:32 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\materias.php:0
+[02-Apr-2014 15:01:32 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\materias.php:1
+[02-Apr-2014 15:01:32 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\materias.php on line 90
+[02-Apr-2014 15:01:32 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:01:32 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\materias.php:0
+[02-Apr-2014 15:01:32 Brazil/East] PHP Notice:  Undefined variable: row in D:\wamp\www\ubaduba\materias.php on line 95
+[02-Apr-2014 15:01:32 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:01:32 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\materias.php:0
+[02-Apr-2014 15:01:33 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 15:01:33 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:01:33 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\professores.php:0
+[02-Apr-2014 15:01:33 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\professores.php:1
+[02-Apr-2014 15:17:50 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 15:17:50 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:17:50 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\salas.php:0
+[02-Apr-2014 15:17:50 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\salas.php:1
+[02-Apr-2014 15:17:50 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\salas.php on line 49
+[02-Apr-2014 15:17:50 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:17:50 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\salas.php:0
+[02-Apr-2014 15:17:50 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\salas.php on line 71
+[02-Apr-2014 15:17:50 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:17:50 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\salas.php:0
+[02-Apr-2014 15:17:52 Brazil/East] PHP Strict standards:  Only variables should be passed by reference in D:\wamp\www\ubaduba\header.php on line 3
+[02-Apr-2014 15:17:52 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:17:52 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 15:17:52 Brazil/East] PHP   2. include() D:\wamp\www\ubaduba\turmas.php:1
+[02-Apr-2014 15:17:52 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\turmas.php on line 49
+[02-Apr-2014 15:17:52 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:17:52 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
+[02-Apr-2014 15:17:52 Brazil/East] PHP Notice:  Undefined index: id in D:\wamp\www\ubaduba\turmas.php on line 69
+[02-Apr-2014 15:17:52 Brazil/East] PHP Stack trace:
+[02-Apr-2014 15:17:52 Brazil/East] PHP   1. {main}() D:\wamp\www\ubaduba\turmas.php:0
