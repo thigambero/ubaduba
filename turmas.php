@@ -3,7 +3,7 @@
 <script>
 	function verificaFormTurma(cad){ // validar
 		with(document.formTurma){ // with	
-			if(materia.value == '0'){alert('O preenchimento da materia é obrigatório!');materia.focus()return false;}
+			if(materia.value == '0'){alert('O preenchimento da materia é obrigatório!');materia.focus();return false;}
 		  	if(professor.value == '0'){alert('O preenchimento do nome do professor é obrigatório!');professor.focus();return false;}
 		  	if(curso.value == '0'){alert('O preenchimento do curso é obrigatório!');curso.focus();return false;}	
 		  	if(numero.value == ''){alert('O preenchimento do número da turma é obrigatório!');numero.focus();return false;}	
@@ -28,7 +28,7 @@ if($_SESSION['permissao'] > 0)
 
 			if($_POST['oque'] == "novo"){
 				$db = conectaBD();
-				echo $query = "INSERT INTO turmas (fk_materia, fk_curso, rp, numero, data_inicio, data_fim) VALUES ('$materia', '$curso', '$professor', '$numero', STR_TO_DATE ('$inicio', '%d/%m/%Y'),  STR_TO_DATE ('$fim', '%d/%m/%Y'))";
+				$query = "INSERT INTO turmas (fk_materia, fk_curso, rp, numero, data_inicio, data_fim) VALUES ('$materia', '$curso', '$professor', '$numero', STR_TO_DATE ('$inicio', '%d/%m/%Y'),  STR_TO_DATE ('$fim', '%d/%m/%Y'))";
 				$result = mysql_query($query);
 				desconectaBD($db);
 				if($result)$aviso_sucesso = "Turma cadastrada com sucesso!";
