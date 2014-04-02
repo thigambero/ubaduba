@@ -16,7 +16,7 @@
     language: 'pt-BR'
   });
    $('#datetimepicker2').datetimepicker({
-    format: 'hh:ii',
+    format: 'dd/MM/yyyy',
     language: 'pt-BR'
   });
 </script>
