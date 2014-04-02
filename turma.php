@@ -25,12 +25,12 @@ if($_SESSION['permissao'] > 0)
 		//Usado para deletar o horário
 		if(isset($_GET['del']) && is_numeric($_GET['del']))
 		{
-			$aviso_erro = "Deseja realmente apagar? <a href='cliente.php?id=".$_GET['id']."&deletar=".$_GET['del']."'>Clique aqui</a> para confirmar";
+			$aviso_erro = "Deseja realmente apagar este horario? <a href='turma.php?id=".$_GET['id']."&deletar=".$_GET['del']."'>Clique aqui</a> para confirmar";
 		}
 		if(isset($_GET['deletar']) && is_numeric($_GET['deletar']))
 		{
-			$query = "DELETE FROM `compras` WHERE pk_compra=".$_GET['deletar']." AND fk_cliente = ".$_GET['id']." AND fk_cliente IN (SELECT pk_cliente FROM clientes WHERE fk_consultora = ".$_SESSION['permissao'].")";
-			$result = mysql_query($query);
+			$query = "DELETE FROM `horarios` WHERE pk_horario=".$_GET['deletar']." AND fk_turma = ".$_GET['id']."";
+			// $result = mysql_query($query);
 		}
 
 		//Para exibir os alertas de erro
@@ -192,7 +192,7 @@ if($_SESSION['permissao'] > 0)
 
 						while ($row2 = mysql_fetch_array($result3))
 						{
-							$aba_conteudo[$i] .= "<div><a href='cliente.php?id=".$_GET['id']."&del=".$row2['pk_compra']."'><i class='icon-remove'></i></a> <a href='compras.php?id=".$_GET['id']."&compra=".$row2['pk_compra']."'>Aula do dia ".$row2['data_inicio']."";
+							$aba_conteudo[$i] .= "<div><a href='turma.php?id=".$_GET['id']."&del=".$row2['pk_horario']."'><i class='icon-remove'></i></a> <a href='presenca.php?id=".$_GET['id']."&horario=".$row2['pk_horario']."'>Aula do dia ".$row2['data_inicio']."";
 
 							$aba_conteudo[$i] .= "</a></div>";
 							
