@@ -49,13 +49,18 @@
           <div class="navbar-inner">
               <div class="container">
                   <ul class="nav">
-                      <li <?php if($pagina_atual=="index.php") echo 'class="active"'; ?>><a href="./">Home</a></li>
+                    <li <?php if($pagina_atual=="index.php") echo 'class="active"'; ?>><a href="./">Home</a></li>
+                    <li <?php if($pagina_atual=="turmas.php") echo 'class="active"'; ?>><a href="turmas.php">Turmas</a></li>
+                    <?php
+                      if($_SESSION['permissao'] == 10)
+                      { ?>
                       <li <?php if($pagina_atual=="cursos.php") echo 'class="active"'; ?>><a href="cursos.php">Cursos</a></li>
                       <li <?php if($pagina_atual=="materias.php") echo 'class="active"'; ?>><a href="materias.php">Matérias</a></li>
                       <li <?php if($pagina_atual=="professores.php") echo 'class="active"'; ?>><a href="professores.php">Professores</a></li>
-                      <li <?php if($pagina_atual=="alunos.php") echo 'class="active"'; ?>><a href="alunos.php">Alunos</a></li>
-                      <li <?php if($pagina_atual=="turmas.php") echo 'class="active"'; ?>><a href="turmas.php">Turmas</a></li>
+                      <li <?php if($pagina_atual=="alunos.php") echo 'class="active"'; ?>><a href="alunos.php">Alunos</a></li> 
                       <li <?php if($pagina_atual=="salas.php") echo 'class="active"'; ?>><a href="salas.php">Salas</a></li>
+                    <?php
+                      } ?>
                   </ul>
 
                   <ul class="nav pull-right">
