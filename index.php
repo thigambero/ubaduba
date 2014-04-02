@@ -26,9 +26,8 @@ if($_SESSION['permissao'] > 0)
 				<tbody>
 		            <?php
 
-					$query="SELECT * FROM `log_acesso` INNER JOIN admins ON fk_admin = pk_admin ORDER BY data DESC LIMIT 10";   
+					$query="SELECT * FROM `log_acesso` INNER JOIN logins ON log_acesso.usuario = logins.usuario ORDER BY data DESC LIMIT 10";   
 				    $result = mysql_query($query);
-
 				    
 					while ($row = mysql_fetch_array($result)) {
 						    echo "<tr>

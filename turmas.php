@@ -1,12 +1,14 @@
 <?php include "header.php";?>
 
 <script>
-	function verificaTurmas(cad){ // validar
-		with(document.formTurmas){ // with	
-			if(materia.value == '0'){alert('O preenchimento da materia é obrigatório!');materia.focus()return false;}
+	function verificaFormTurma(cad){ // validar
+		with(document.formTurma){ // with	
+			if(materia.value == '0'){alert('O preenchimento da materia é obrigatório!');materia.focus();return false;}
 		  	if(professor.value == '0'){alert('O preenchimento do nome do professor é obrigatório!');professor.focus();return false;}
 		  	if(curso.value == '0'){alert('O preenchimento do curso é obrigatório!');curso.focus();return false;}	
-		  	if(numero.value == '0'){alert('O preenchimento do número da turma é obrigatório!');numero.focus();return false;}	
+		  	if(numero.value == ''){alert('O preenchimento do número da turma é obrigatório!');numero.focus();return false;}	
+		  	if(inicio.value == ''){alert('O preenchimento da data de início é obrigatório!');inicio.focus();return false;}
+		  	if(fim.value == ''){alert('O preenchimento da data de término é obrigatório!');fim.focus();return false;}
 			return true;
 		}
 	} 
@@ -21,10 +23,12 @@ if($_SESSION['permissao'] > 0)
 		$curso = $_POST['curso'];
 		$professor = $_POST['professor'];
 		$materia = $_POST['materia'];
+		$inicio = $_POST['inicio'];
+		$fim = $_POST['fim'];
 
 			if($_POST['oque'] == "novo"){
 				$db = conectaBD();
-				$query = "INSERT INTO turmas (fk_materia, fk_curso, rp, numero) VALUES ('$materia', '$curso', '$professor', '$numero')";
+				$query = "INSERT INTO turmas (fk_materia, fk_curso, rp, numero, data_inicio, data_fim) VALUES ('$materia', '$curso', '$professor', '$numero', STR_TO_DATE ('$inicio', '%d/%m/%Y'),  STR_TO_DATE ('$fim', '%d/%m/%Y'))";
 				$result = mysql_query($query);
 				desconectaBD($db);
 				if($result)$aviso_sucesso = "Turma cadastrada com sucesso!";
@@ -92,6 +96,7 @@ if($_SESSION['permissao'] > 0)
 						<label class ="control-label" >Número:</label>
 						<div class="controls"><input class="input-xlarge" type="text" id="numero" name="numero" value="<?php echo $row['numero']; ?>" maxlength="100" required <?php if(is_numeric($_GET['id'])) echo "disabled"; ?>/></div>
 					</div>
+
 					
 
 					<?php
@@ -103,7 +108,7 @@ if($_SESSION['permissao'] > 0)
 					<div class="control-group">
 						<label class ="control-label">Curso:</label>
 						<div class="controls">
-							<select name="curso" <?php if(is_numeric($_GET['id'])) echo "disabled"; ?>>
+							<select name="curso" id="curso"  <?php if(is_numeric($_GET['id'])) echo "disabled"; ?>>
 									<option value="0">Selecione um Curso</option>
 								<?php
 								while($curso = mysql_fetch_array($result)){ ?>
@@ -123,7 +128,7 @@ if($_SESSION['permissao'] > 0)
 					<div class="control-group">
 						<label class ="control-label">Materia:</label>
 						<div class="controls">
-							<select name="materia" <?php if(is_numeric($_GET['id'])) echo "disabled"; ?>>
+							<select name="materia" id="materia" <?php if(is_numeric($_GET['id'])) echo "disabled"; ?>>
 									<option value="0">Selecione uma Materia</option>
 								<?php
 								while($materia = mysql_fetch_array($result)){ ?>
@@ -143,7 +148,7 @@ if($_SESSION['permissao'] > 0)
 					<div class="control-group">
 						<label class ="control-label">Professor:</label>
 						<div class="controls">
-							<select name="professor">
+							<select name="professor" id="professor">
 									<option value="0">Selecione um Professor</option>
 								<?php
 								while($professor = mysql_fetch_array($result)){ ?>
@@ -153,6 +158,29 @@ if($_SESSION['permissao'] > 0)
 							</select>
 						</div>
 					</div>
+
+					 <div class="control-group">
+						   <label class ="control-label">Início:</label>
+						   <div class="controls">
+						     <div id="datetimepicker" class="input-append date" data-date-minviewmode="days">
+						         <input class="input-medium" name="inicio" type="text" id="inicio" value="<?php if($row['data_inicio']!='')echo $row['data_inicio']; else echo date("d/m/Y"); ?>" readonly></input>  
+						         <span class="add-on">
+						           <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+						         </span>
+						       </div>
+						   </div>
+						 </div>
+						 <div class="control-group">
+						   <label class ="control-label">Fim:</label>
+						   <div class="controls">
+						     <div id="datetimepicker2" class="input-append date" data-date-minviewmode="days">
+						         <input class="input-medium" name="fim" type="text" id="fim" value="<?php if($row['data_fim']!='')echo $row['data_fim']; else echo date("d/m/Y",strtotime(date("Y-m-d")." +4 month")); ?>"readonly></input>  
+						         <span class="add-on">
+						           <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+						         </span>
+						       </div>
+						   </div>
+						 </div>
 
 					<div class="control-group">
 						<label class ="control-label"></label>
@@ -170,6 +198,7 @@ if($_SESSION['permissao'] > 0)
 			</form>
 
 			<?php
+
 			}
 
 			else{ 
