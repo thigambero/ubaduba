@@ -251,10 +251,10 @@ if($_SESSION['permissao'] > 0)
 
 				echo '
 						<tr class="itens_tabela" >
-						<td>' . $row['numero'] . '</td>
-						<td>' . $row['curso'] . '</td>
-						<td>' . $row['materia'] . '</td>
-						<td>' . $row['professor'] . '</td>
+						<td onclick="location.href = \'turma.php?id='.$row['pk_turma'].'\';">' . $row['numero'] . '</td>
+						<td onclick="location.href = \'turma.php?id='.$row['pk_turma'].'\';">' . $row['curso'] . '</td>
+						<td onclick="location.href = \'turma.php?id='.$row['pk_turma'].'\';">' . $row['materia'] . '</td>
+						<td onclick="location.href = \'turma.php?id='.$row['pk_turma'].'\';">' . $row['professor'] . '</td>
 						';
 						if($_SESSION['permissao'] == 10)
 							echo '<td><a href="turmas.php?id=' . $row['pk_turma'] . '"><i class = "icon-pencil"></i></a></td>
