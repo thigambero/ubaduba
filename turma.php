@@ -25,17 +25,20 @@ if($_SESSION['permissao'] > 0)
 		//Usado para deletar o horário
 		if(isset($_GET['del']) && is_numeric($_GET['del']))
 		{
-			$aviso_erro = "Deseja realmente apagar? <a href='cliente.php?id=".$_GET['id']."&deletar=".$_GET['del']."'>Clique aqui</a> para confirmar";
+			$aviso_erro = "Deseja realmente apagar este horario? <a href='turma.php?id=".$_GET['id']."&deletar=".$_GET['del']."'>Clique aqui</a> para confirmar";
 		}
 		if(isset($_GET['deletar']) && is_numeric($_GET['deletar']))
 		{
-			$query = "DELETE FROM `compras` WHERE pk_compra=".$_GET['deletar']." AND fk_cliente = ".$_GET['id']." AND fk_cliente IN (SELECT pk_cliente FROM clientes WHERE fk_consultora = ".$_SESSION['permissao'].")";
-			$result = mysql_query($query);
+			$query = "DELETE FROM `horarios` WHERE pk_horario=".$_GET['deletar']." AND fk_turma = ".$_GET['id']."";
+			// $result = mysql_query($query);
+			$aviso_sucesso = "[AINDA NÃO MASSSS]Aula deletada com sucesso!";
 		}
 
 		//Para exibir os alertas de erro
 		if(isset($aviso_erro) && $aviso_erro != "")
 			echo '<div class="alert"><button type="button" class="close" data-dismiss="alert">×</button>' . $aviso_erro . '</div>';
+		if(isset($aviso_sucesso) && $aviso_sucesso != "")
+			echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">×</button>' . $aviso_sucesso . '</div>';
 		
 		//Para pegar a informação da turma
 		$query = "SELECT
@@ -192,7 +195,7 @@ if($_SESSION['permissao'] > 0)
 
 						while ($row2 = mysql_fetch_array($result3))
 						{
-							$aba_conteudo[$i] .= "<div><a href='cliente.php?id=".$_GET['id']."&del=".$row2['pk_compra']."'><i class='icon-remove'></i></a> <a href='compras.php?id=".$_GET['id']."&compra=".$row2['pk_compra']."'>Aula do dia ".$row2['data_inicio']."";
+							$aba_conteudo[$i] .= "<div><a href='turma.php?id=".$_GET['id']."&del=".$row2['pk_horario']."'><i class='icon-remove'></i></a> <a href='presenca.php?id=".$_GET['id']."&horario=".$row2['pk_horario']."'>Aula do dia ".$row2['data_inicio']."";
 
 							$aba_conteudo[$i] .= "</a></div>";
 							
@@ -276,9 +279,7 @@ if($_SESSION['permissao'] > 0)
 			$row = mysql_fetch_array($result);
 			$num_turma = $row['numero'];
 			?>
-			<form action="materias.php" method="post" id="formMateria" name="formMateria" class="form-horizontal" onSubmit="return verificaFormMateria(this);">
-				<input type="hidden" name="oque" value="<?php echo $_GET['id']; ?>" />
-
+			<form action="turma.php?id=<?php echo $_GET['id'];?>" method="post" id="formMateria" name="formMateria" class="form-horizontal" onSubmit="return verificaFormMateria(this);">
 				<div class="row">
 					<div class="span6">
 						<div class="control-group">
