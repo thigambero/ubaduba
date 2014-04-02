@@ -166,7 +166,6 @@ if($_SESSION['permissao'] > 0)
 				<div id="mascara"></div>
 
 
-
 				<div class="row">
 					<div class ="span12">
 					<?php 
@@ -175,28 +174,25 @@ if($_SESSION['permissao'] > 0)
 					$aba = array();
 					$aba_conteudo = array();
 					$i = 0;
-
-					$query = "SELECT count(*),date_format(data, '%m/%Y') as data FROM compras WHERE fk_cliente = ".$_GET['id']." group by date_format(data, '%m/%Y') order by data desc";
+					
+					$db = conectaBD();	
+					$query = "SELECT count(*),date_format(data_inicio, '%m/%Y') as data FROM horarios WHERE fk_turma = ".$_GET['id']." group by date_format(data_inicio, '%m/%Y') order by data_inicio desc";
 					$result = mysql_query($query);
-
+				
 					while ($row = mysql_fetch_array($result))
 					{
-
 						$aba[$i]  = '';
 						$aba_conteudo[$i]  = '';
-
 
 						$aba[$i] .= $row['data']; 
 
 
-						$query = "SELECT pk_compra, DATE_FORMAT(data, '%d') as data, observacao FROM compras WHERE fk_cliente = ".$_GET['id']." AND DATE_FORMAT(data, '%m/%Y') = '".$row['data']."' order by data desc, pk_compra desc";
+						$query = "SELECT pk_horario, DATE_FORMAT(data_inicio, '%d às %h:%i') as data_inicio FROM horarios WHERE fk_turma = ".$_GET['id']." AND DATE_FORMAT(data_inicio, '%m/%Y') = '".$row['data']."' order by data_inicio desc";
 						$result3 = mysql_query($query);
 
 						while ($row2 = mysql_fetch_array($result3))
 						{
-							$aba_conteudo[$i] .= "<div><a href='cliente.php?id=".$_GET['id']."&del=".$row2['pk_compra']."'><i class='icon-remove'></i></a> <a href='compras.php?id=".$_GET['id']."&compra=".$row2['pk_compra']."'>Compra do dia ".$row2['data']." - ";
-							if($row2['observacao'] == "")$aba_conteudo[$i] .= "<i>Sem Observação</i>";
-							else $aba_conteudo[$i] .= $row2['observacao'];
+							$aba_conteudo[$i] .= "<div><a href='cliente.php?id=".$_GET['id']."&del=".$row2['pk_compra']."'><i class='icon-remove'></i></a> <a href='compras.php?id=".$_GET['id']."&compra=".$row2['pk_compra']."'>Aula do dia ".$row2['data_inicio']."";
 
 							$aba_conteudo[$i] .= "</a></div>";
 							
@@ -206,7 +202,7 @@ if($_SESSION['permissao'] > 0)
 						$i++;
 
 					}	
-
+					desconectaBD($db);
 
 						echo '
 						<div class="bs-docs-example">
