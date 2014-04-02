@@ -11,7 +11,7 @@
 </script>
 
 <?php
-if($_SESSION['permissao'] > 0)
+if($_SESSION['permissao'] == 10)
 {
 	if(isset($_POST['enviar']))
 	{	
