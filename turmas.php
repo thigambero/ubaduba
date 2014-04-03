@@ -1,5 +1,6 @@
 <?php include "header.php";?>
 
+
 <script>
 	function verificaFormTurma(cad){ // validar
 		with(document.formTurma){ // with	
@@ -13,7 +14,6 @@
 		}
 	} 
 </script>
-
 <?php
 if($_SESSION['permissao'] > 0)
 {
@@ -241,25 +241,26 @@ if($_SESSION['permissao'] > 0)
 				<tbody>
 				<?php
 				$db = conectaBD();
-				$query="SELECT t.pk_turma, c.nome curso, m.nome materia, p.nome professor, t.numero FROM turmas t 
+						$query="SELECT t.pk_turma, c.nome curso, m.nome materia, p.nome professor, t.numero FROM turmas t 
 						INNER JOIN cursos c ON t.fk_curso = c.pk_curso 
 						INNER JOIN materias m ON t.fk_materia = m.pk_materia 
 						INNER JOIN professores p ON t.rp = p.rp  WHERE 1";
 				$result = mysql_query($query);
 				desconectaBD($db);
 				while($row = mysql_fetch_array($result)) {
-
-				echo '
-						<tr class="itens_tabela" >
-						<td onclick="location.href = \'turma.php?id='.$row['pk_turma'].'\';">' . $row['numero'] . '</td>
-						<td onclick="location.href = \'turma.php?id='.$row['pk_turma'].'\';">' . $row['curso'] . '</td>
-						<td onclick="location.href = \'turma.php?id='.$row['pk_turma'].'\';">' . $row['materia'] . '</td>
-						<td onclick="location.href = \'turma.php?id='.$row['pk_turma'].'\';">' . $row['professor'] . '</td>
-						';
-						if($_SESSION['permissao'] == 10)
-							echo '<td><a href="turmas.php?id=' . $row['pk_turma'] . '"><i class = "icon-pencil"></i></a></td>
-					</tr>
-					';
+					if($row['professor']==$_SESSION['nome'] || $_SESSION['permissao'] == 10){
+						echo '
+								<tr class="itens_tabela" >
+								<td onclick="location.href = \'turma.php?id='.$row['pk_turma'].'\';">' . $row['numero'] . '</td>
+								<td onclick="location.href = \'turma.php?id='.$row['pk_turma'].'\';">' . $row['curso'] . '</td>
+								<td onclick="location.href = \'turma.php?id='.$row['pk_turma'].'\';">' . $row['materia'] . '</td>
+								<td onclick="location.href = \'turma.php?id='.$row['pk_turma'].'\';">' . $row['professor'] . '</td>
+								';
+								if($_SESSION['permissao'] == 10)
+									echo '<td><a href="turmas.php?id=' . $row['pk_turma'] . '"><i class = "icon-pencil"></i></a></td>
+							</tr>
+							';
+					}
 				}
 				?>
 				</tbody>
