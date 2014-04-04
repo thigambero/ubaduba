@@ -18,6 +18,22 @@ if($_SESSION['permissao'] > 0)
 	</script>
 
 	<?php
+
+	if(isset($_POST['cadastrarAlunos']))
+	{
+		$turma = $_GET['id'];
+
+		$db = conectaBD();
+		foreach($_POST['incluirAluno'] as $ra)
+	    {
+	        $query = "INSERT INTO `rel_turmas_alunos` (`fk_turma`,`ra`) VALUES ('$turma', '$ra')";
+	        $result=mysql_query($query);
+	    }
+	    desconectaBD($db);
+	}
+
+
+
 	if(is_numeric($_GET['id']) && !isset($_GET['nova_aula']) && !isset($_GET['adicionar_alunos']))
 	{
 		$pk_turma = $_GET['id'];
@@ -347,7 +363,7 @@ if($_SESSION['permissao'] > 0)
 
 						<div class="control-group">
 							<label class ="control-label"></label>
-							<div class="controls"><input class="btn btn-large btn-primary" type="submit" name="enviar" value="Enviar" /></div>
+							<div class="controls"><input class="btn btn-large btn-primary" type="submit" name="cadastrarAlunos" value="Enviar" /></div>
 						</div>
 					</div> <!-- span6-->
 
@@ -359,6 +375,125 @@ if($_SESSION['permissao'] > 0)
 	// INICIO DA ADIÇÃO DE ALUNOS
 	else if(is_numeric($_GET['id']) && !isset($_GET['nova_aula']) && isset($_GET['adicionar_alunos']))
 	{ 
+		?>
+		<ul class="pager">
+		    <li class="previous">
+		      <a href = "turma.php?id=<?php echo $_GET['id']; ?>">&larr; Cancelar</a>
+		    </li>
+		</ul>
+		<br/>
+		<br />
+		<div class="row">
+			<div style="span12">
+				<form class="navbar-search pull-left" >
+				  <input style="height: 25px;line-height: 20px;" type="text" class="input-xxlarge search-query" placeholder="Pesquisar nas 2 tabelas" onkeyup="BuscaItemTabela(this);">
+				  <br/><br/>
+				</form>
+			</div>
+		</div>
+					
+		<style>
+		textarea,
+		input[type="text"],
+		.uneditable-input {
+		  display: inline-block;
+		  height: 14px;
+
+		  margin: 0 0 0 0;
+		  font-size: 14px;
+		  line-height: 2px;
+		  color: #555555;
+		}
+		.btn {
+
+		  display: inline-block;
+		  *display: inline;
+		  /* IE7 inline-block hack */
+
+		  *zoom: 1;
+		  padding: 4px 12px;
+		  margin-bottom: 0;
+		  font-size: 14px;
+		  line-height: 12px;
+		  text-align: center;
+		  vertical-align: middle;
+		  cursor: pointer;
+		  
+		}
+		
+		
+		</style>
+
+			<div class="row">
+				<div class="span6">
+					<h4>Lista de todos alunos</h4>
+					<table class="table" id="lista">
+						
+						<thead>
+							<tr>
+								<th>RA.</th>
+								<th>Nome</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody >
+						<?php
+
+						$db = conectaBD();
+						$query="SELECT * FROM `alunos` WHERE 1 order by nome";
+						$result = mysql_query($query);
+						desconectaBD($db);
+						
+
+						while($row = mysql_fetch_array($result)) {
+
+						echo '
+							<tr id="item_' . $row['ra'] . '" class="itens_tabela">
+								<td>' . $row['ra'] .'</td>
+								<td class="nome">' . $row['nome'] . '</td>
+								<td> <a class="btn btn-small" onClick="insereAlunoTurma(' . $row['ra'] . ', \'' . $row['nome'] . '\');"><i class="icon-chevron-right" ></i></a> </td>
+							</tr>
+							';
+						}
+						?>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="span6">
+					<h4>Lista dos alunos da turma</h4>
+					<form action="turma.php?id=<?php echo $_GET['id'];?>" method="post" id="comboForm">							
+						<table class="table" id="lista">
+							<thead>
+								<tr>
+									<th>RA</th>
+									<th>Nome</th>
+					 			</tr>
+							</thead>
+
+							<tbody id="lista_combo">
+							
+							</tbody>
+
+						</table>
+
+
+						<br/>
+						<div class="well well-small">
+						<b>Total de alunos:</b> <span id="qtd_alunos">0</span></td></tr>
+						</div>
+
+
+						<div class="control-group">
+							<label class ="control-label"></label>
+							<div class="controls"><input class="btn btn-large btn-primary" type="submit" name="cadastrarAlunos" value="Salvar" /></div>
+						</div>
+						
+
+					</form>
+				</div>
+			</div>
+<?php
 
 	}
 	else

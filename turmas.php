@@ -241,10 +241,21 @@ if($_SESSION['permissao'] > 0)
 				<tbody>
 				<?php
 				$db = conectaBD();
+
+				$usuario = $_SESSION['usuario'];
+
+				if($_SESSION['permissao'] == 1) // Eh professor
+					$complemento = "p.rp = '$usuario'";
+				else if($_SESSION['permissao'] == 10)
+					$complemento = "1";
+				else
+					$complemento = "t.pk_curma IN (SELECT fk_turma FROM rel_turmas_alunos WHERE ra = $usuario)";
+
 				$query="SELECT t.pk_turma, c.nome curso, m.nome materia, p.nome professor, t.numero FROM turmas t 
 						INNER JOIN cursos c ON t.fk_curso = c.pk_curso 
 						INNER JOIN materias m ON t.fk_materia = m.pk_materia 
-						INNER JOIN professores p ON t.rp = p.rp  WHERE 1";
+						INNER JOIN professores p ON t.rp = p.rp WHERE $complemento";
+
 				$result = mysql_query($query);
 				desconectaBD($db);
 				while($row = mysql_fetch_array($result)) {
