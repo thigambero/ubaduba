@@ -39,7 +39,7 @@ if($_SESSION['permissao'] > 0)
 				$result = mysql_query($query);
 				desconectaBD($db);
 				if($result){
-					$query = "INSERT INTO admins (usuario, senha, nome, permissao) VALUES ('$rp', '$senha', '$nome', '2')";
+					$query = "INSERT INTO logins (usuario, senha, nome, permissao) VALUES ('$rp', '$senha', '$nome', '2')";
 					$result = mysql_query($query);
 					$aviso_sucesso = "Professor cadastrado com sucesso!";
 				}
@@ -52,7 +52,7 @@ if($_SESSION['permissao'] > 0)
 			$query = "UPDATE professores SET nome = '$nome', email = '$email', sexo = '$sexo' WHERE rp = '$id'";
 			$result = mysql_query($query);
 			if($senha != ""){
-				$query = "UPDATE admins SET senha = '$senha' WHERE usuario = '$id'";
+				$query = "UPDATE logins SET senha = '$senha' WHERE usuario = '$id' AND permissao = 2";
 				$result2 = mysql_query($query);
 			}
 			desconectaBD($db);
