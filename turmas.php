@@ -160,7 +160,7 @@ if($_SESSION['permissao'] > 0)
 					</div>
 
 					 <div class="control-group">
-						   <label class ="control-label">Início:</label>
+						   <label class ="control-label">Início Semestre:</label>
 						   <div class="controls">
 						     <div id="datetimepicker" class="input-append date" data-date-minviewmode="days">
 						         <input class="input-medium" name="inicio" type="text" id="inicio" value="<?php if($row['data_inicio']!='')echo $row['data_inicio']; else echo date("d/m/Y"); ?>" readonly></input>  
@@ -171,7 +171,7 @@ if($_SESSION['permissao'] > 0)
 						   </div>
 						 </div>
 						 <div class="control-group">
-						   <label class ="control-label">Fim:</label>
+						   <label class ="control-label">Fim Semestre:</label>
 						   <div class="controls">
 						     <div id="datetimepicker2" class="input-append date" data-date-minviewmode="days">
 						         <input class="input-medium" name="fim" type="text" id="fim" value="<?php if($row['data_fim']!='')echo $row['data_fim']; else echo date("d/m/Y",strtotime(date("Y-m-d")." +4 month")); ?>"readonly></input>  
@@ -228,13 +228,19 @@ if($_SESSION['permissao'] > 0)
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>Número</th>
-						<th>Curso</th>
+						<?php
+							if($_SESSION['permissao'] > 1){
+								echo '<th>Número</th>';
+								echo '<th>Curso</th>';
+							}
+						?>
 						<th>Matéria</th>
 						<th>Professor</th>
 						<?php
 							if($_SESSION['permissao'] == 10)
 								echo '<th></th>';
+							else if($_SESSION['permissao'] == 1)
+								echo '<th>Presença</th>';
 						?>
 					</tr>
 				</thead>
@@ -252,23 +258,41 @@ if($_SESSION['permissao'] > 0)
 				}
 				else{
 					$complemento = "t.pk_turma IN (SELECT fk_turma FROM rel_turmas_alunos WHERE ra = $usuario)";
-				}				
-						$query="SELECT t.pk_turma, c.nome curso, m.nome materia, p.nome professor, t.numero FROM turmas t 
-						INNER JOIN cursos c ON t.fk_curso = c.pk_curso 
-						INNER JOIN materias m ON t.fk_materia = m.pk_materia 
-						INNER JOIN professores p ON t.rp = p.rp  WHERE $complemento";
+				}	
+
+				$query="SELECT t.pk_turma, c.nome curso, m.nome materia, p.nome professor, t.numero FROM turmas t 
+				INNER JOIN cursos c ON t.fk_curso = c.pk_curso 
+				INNER JOIN materias m ON t.fk_materia = m.pk_materia 
+				INNER JOIN professores p ON t.rp = p.rp  WHERE $complemento";
+
 				$result = mysql_query($query);
 				desconectaBD($db);
 				while($row = mysql_fetch_array($result)) {
+
+					$db = conectaBD();
+					$query = "SELECT (SELECT count(*) FROM horarios WHERE data_fim < NOW() AND fk_turma = '".$row['pk_turma']."') as total, (SELECT count(*) FROM horarios INNER JOIN presentes ON fk_horario = pk_horario AND ra = '".$_SESSION['usuario']."' WHERE data_fim < NOW() AND fk_turma = '".$row['pk_turma']."') as presentes";
+					$result2 = mysql_query($query);
+					$rowAula = mysql_fetch_array($result2);
+					desconectaBD($db);
+					
+
+
 					echo '
-							<tr class="itens_tabela" >
-							<td onclick="location.href = \'turma.php?id='.$row['pk_turma'].'\';">' . $row['numero'] . '</td>
-							<td onclick="location.href = \'turma.php?id='.$row['pk_turma'].'\';">' . $row['curso'] . '</td>
+							<tr class="itens_tabela" >';
+
+						if($_SESSION['permissao'] > 1){
+							echo '<td onclick="location.href = \'turma.php?id='.$row['pk_turma'].'\';">' . $row['numero'] . '</td>
+							      <td onclick="location.href = \'turma.php?id='.$row['pk_turma'].'\';">' . $row['curso'] . '</td>';
+							  }
+						echo '
 							<td onclick="location.href = \'turma.php?id='.$row['pk_turma'].'\';">' . $row['materia'] . '</td>
 							<td onclick="location.href = \'turma.php?id='.$row['pk_turma'].'\';">' . $row['professor'] . '</td>
 							';
 							if($_SESSION['permissao'] == 10)
-								echo '<td><a href="turmas.php?id=' . $row['pk_turma'] . '"><i class = "icon-pencil"></i></a></td>
+								echo '<td><a href="turmas.php?id=' . $row['pk_turma'] . '"><i class = "icon-pencil"></i></a></td>';
+							if($_SESSION['permissao'] == 1)
+								echo '<td onclick="location.href = \'turma.php?id='.$row['pk_turma'].'\';">' . round($rowAula['presentes']*100/$rowAula['total'],2) . '% </td>';
+							echo '
 						</tr>
 						';
 				

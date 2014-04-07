@@ -1,7 +1,7 @@
 <?php
 include "header.php";
 
-if($_SESSION['permissao'] > 0)
+if($_SESSION['permissao'] == 10)
 {
 	
 	$db = conectaBD();
@@ -65,7 +65,8 @@ if($_SESSION['permissao'] > 0)
 <?php
 	}
 	desconectaBD($db);
-}
 
-include "footer.php";
+include "footer.php";	
+}
+else echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;URL=./turmas.php'>";
 ?>

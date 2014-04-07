@@ -37,13 +37,13 @@ if($_SESSION['permissao'] > 0)
 			else{
 				$query = "INSERT INTO professores (rp, nome, sexo, email ) VALUES ('$rp', '$nome', '$sexo', '$email')";
 				$result = mysql_query($query);
-				desconectaBD($db);
 				if($result){
-					$query = "INSERT INTO logins (usuario, senha, nome, permissao) VALUES ('$rp', '$senha', '$nome', '2')";
+					$query = "INSERT INTO logins (usuario, senha, permissao) VALUES ('$rp', '$senha', '2')";
 					$result = mysql_query($query);
 					$aviso_sucesso = "Professor cadastrado com sucesso!";
 				}
 				else $aviso_erro = "Houve um erro no cadastro, tente novamente!";
+				desconectaBD($db);
 			}
 		}
 		else{

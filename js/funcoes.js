@@ -29,21 +29,28 @@ function somaQtdAlunos()
 
 function insereAlunoTurma(id, nome)
 {
-	array_alunos.push({
-		ra : id,
-		nome : nome
-	});
+	//Verifica se o aluno já está na turma;
+	var result = $.grep(array_alunos, function(e){ return e.ra == id; });
 
-	$('#lista_combo').append('<tr id="itemCombo_' + id + '">'+
-								'<td>' + id + '</td>'+
-								'<td>' + nome + '</td>'+
-								'<td><input type="hidden" name="incluirAluno[]" value="'+id+'" >'+
-								'</td>'+
-								'<td><a class="btn btn-danger btn-small" onClick="removeAlunoTurma('+id+');"><i class="icon-remove"></i></td>' +
-							'</tr>');
+	//Se o aluno não existe na turma adiciona
+	if(result.length == 0)
+	{
+		array_alunos.push({
+			ra : id,
+			nome : nome
+		});
 
-	somaQtdAlunos();
+		$('#lista_combo').append('<tr id="itemCombo_' + id + '">'+
+									'<td>' + id + '</td>'+
+									'<td>' + nome + '</td>'+
+									'<td><input type="hidden" name="incluirAluno[]" value="'+id+'" >'+
+									'</td>'+
+									'<td><a class="btn btn-danger btn-small" onClick="removeAlunoTurma('+id+');"><i class="icon-remove"></i></td>' +
+								'</tr>');
 
+		somaQtdAlunos();
+	}
+	console.log("AAA");
 	$('#item_' + id).hide();
 }
 

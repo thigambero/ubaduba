@@ -24,12 +24,47 @@ if($_SESSION['permissao'] > 0)
 		$turma = $_GET['id'];
 
 		$db = conectaBD();
+
+		$query = "DELETE from rel_turmas_alunos WHERE fk_turma = '$turma'";
+		$result = mysql_query($query);
+
 		foreach($_POST['incluirAluno'] as $ra)
 	    {
 	        $query = "INSERT INTO `rel_turmas_alunos` (`fk_turma`,`ra`) VALUES ('$turma', '$ra')";
 	        $result=mysql_query($query);
 	    }
 	    desconectaBD($db);
+	}
+
+	if(isset($_POST['enviarNovaAula']))
+	{	
+		$turma = $_GET['id'];
+		$diasSelecionados = $_POST['dia'];
+		$sala = $_POST['sala'];
+
+		$db = conectaBD();	
+		 $query = "SELECT data_inicio, data_fim, datediff(data_fim, data_inicio) as dias FROM turmas WHERE pk_turma = ".$_GET['id'];
+		$result = mysql_query($query);
+		$row = mysql_fetch_array($result);
+		 $dataInicio = $row['data_inicio']." ". $_POST['hora_inicio'].":". $_POST['minuto_inicio'].":00";
+		 $dataFim = $row['data_inicio']." ". $_POST['hora_fim'].":". $_POST['minuto_fim'].":00";
+	 	 $numeroDias = $row['dias'];
+
+	 	 for($i=0; $i<=$numeroDias; $i++)
+	 	 {
+	 	 	$diaAtual = date("w",strtotime($dataInicio." +$i day"));
+	 	 	$dataAtualInicio = date("Y-m-d H:i:s",strtotime($dataInicio." +$i day"));
+	 	 	$dataAtualFim = date("Y-m-d H:i:s",strtotime($dataFim." +$i day"));
+	 	 	if (in_array($diaAtual, $diasSelecionados))
+	 	 	{
+	 	 		$query = "INSERT INTO horarios (fk_turma, fk_sala, data_inicio, data_fim) VALUES ('$turma', '$sala', '$dataAtualInicio', '$dataAtualFim')";
+	 	 		$result = mysql_query($query);
+	 	 	}
+
+	 	 }
+
+		desconectaBD($db);
+
 	}
 
 
@@ -58,7 +93,7 @@ if($_SESSION['permissao'] > 0)
 		
 		//Para pegar a informação da turma
 		$query = "SELECT
-					t.numero,
+					t.numero, DATE_FORMAT(t.data_inicio, '%d/%m/%Y') inicio, DATE_FORMAT(t.data_fim, '%d/%m/%Y') fim,
 					c.nome curso,
 					m.nome materia, m.creditos
 				  FROM
@@ -73,11 +108,21 @@ if($_SESSION['permissao'] > 0)
 				  	t.fk_materia = m.pk_materia
 				  WHERE
 				  	pk_turma = '$pk_turma'
-				  	";
+			";
+
+		
+
 
 		$db = conectaBD();
 		$result = mysql_query($query);
+		if($_SESSION['permissao'] == 1){
+			$query2 = "SELECT (SELECT count(*) FROM horarios WHERE data_fim < NOW() AND fk_turma = '".$_GET['id']."') as total, (SELECT count(*) FROM horarios INNER JOIN presentes ON fk_horario = pk_horario AND ra = '".$_SESSION['usuario']."' WHERE data_fim < NOW() AND fk_turma = '".$_GET['id']."') as presentes";
+			$result2=mysql_query($query2);
+			$rowAula = mysql_fetch_array($result2);
+			$presenca = round($rowAula['presentes']*100/$rowAula['total'],2)."%";
+		}
 		desconectaBD($db);
+
 
 		if(mysql_num_rows($result) > 0)
 		{
@@ -86,8 +131,16 @@ if($_SESSION['permissao'] > 0)
 			$curso = $row['curso'];
 			$materia = $row['materia'];
 			$creditos = $row['creditos'];
+			$inicio = $row['inicio'];
+			$fim = $row['fim'];
 
 			?>
+			<ul class="pager">
+			    <li class="previous">
+			      <a href = "turmas.php?">&larr; Voltar</a>
+			    </li>
+			</ul>
+
 				<div class="row">
 					<div class="span12">
 						<h3>Turma <?php echo $num_turma;?></h3>
@@ -97,13 +150,32 @@ if($_SESSION['permissao'] > 0)
 								  	<b>Curso:</b> <?php echo $curso;?><br>
 								  	<b>Matéria:</b> <?php echo $materia;?><br>
 								  	<b>Créditos:</b> <?php echo $creditos;?><br>
+								  	<b>Semestre:</b> <?php echo $inicio." a ".$fim;?><br>
+								  	<?php
+								  	if($_SESSION['permissao']==1){ ?>
+								  		<br>
+								  		<b>Presença:</b> <?php echo $presenca;?><br>
+								  		<?php
+								  	} ?>
 								</address>		
 							</div>
 							<div class="span4">
-								<a href="turma.php?id=<?php echo $pk_turma;?>&nova_aula" class="btn btn-medium btn-primary">Cadastrar Nova Aula</a>
+								<?php
+								if($_SESSION['permissao'] == 10){ ?>
+									<a href="turma.php?id=<?php echo $pk_turma;?>&nova_aula" class="btn btn-medium btn-primary">Cadastrar Nova Aula</a>
+									<?php
+								} ?>
 							</div>
 							<div class="span4">
-								<a href="turma.php?id=<?php echo $pk_turma;?>&adicionar_alunos" class="btn btn-medium btn-primary">Adicionar Alunos</a>
+								<?php
+								if($_SESSION['permissao'] == 10){ ?>
+									<a href="turma.php?id=<?php echo $pk_turma;?>&adicionar_alunos" class="btn btn-medium btn-primary">Adicionar Alunos</a>
+									<?php
+								}
+								if($_SESSION['permissao'] > 0){ ?>
+									<a href="#myModal" role="button" class="btn" data-toggle="modal">Lista de Alunos</a>
+									<?php
+								} ?>
 							</div>
 						</div>
 					</div>
@@ -135,54 +207,29 @@ if($_SESSION['permissao'] > 0)
 				 
 				.fechar{display:block; text-align:right;}
 				</style>
-
-				<script>
-				$(document).ready(function(){
-				    $("a[rel=modal]").click( function(ev){
-				        ev.preventDefault();
 				 
-				        var id = $(this).attr("href");
-				 
-				        var alturaTela = $(document).height();
-				        var larguraTela = $(window).width();
-				     
-				        //colocando o fundo preto
-				        $('#mascara').css({'width':larguraTela,'height':alturaTela});
-				        $('#mascara').fadeIn(200);
-				        $('#mascara').fadeTo("slow",0.5);
-				 
-				        var left = ($(window).width() /2) - ( $(id).width() / 2 );
-				        var top = ($(window).height() / 2) - ( $(id).height() / 2 );
-				     
-				        $(id).css({'top':top,'left':left});
-				        $(id).show();  
-				    });
-				 
-				    $("#mascara").click( function(){
-				        $(this).hide();
-				        $(".window").hide();
-				    });
-				 
-				    $('.fechar').click(function(ev){
-				        ev.preventDefault();
-				        $("#mascara").hide();
-				        $(".window").hide();
-				    });
-				});
-				</script>
-				 
-				<div class="window" id="indicacoes">
-				    <a href="#" class="fechar">Fechar</a>
-				    <h4>Indicações</h4>
-				   	<?php if($row['indicacao1']!=""){?><p><?php echo $row["indicacao1"]." - ".num_tel($row['fone_indicacao1']);?></p><?php } ?>
-				    <?php if($row['indicacao2']!=""){?><p><?php echo $row["indicacao2"]." - ".num_tel($row['fone_indicacao2']);?></p><?php } ?>
-				    <?php if($row['indicacao3']!=""){?><p><?php echo $row["indicacao3"]." - ".num_tel($row['fone_indicacao3']);?></p><?php } ?>
-				    <?php if($row['indicacao4']!=""){?><p><?php echo $row["indicacao4"]." - ".num_tel($row['fone_indicacao4']);?></p><?php } ?>
+				<!-- Modal -->
+				<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-header">
+				    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				    <h3 id="myModalLabel">Alunos</h3>
+				  </div>
+				  <div class="modal-body">
+				    <?php 
+				    	$db = conectaBD();
+				    	$query = "SELECT nome, ra FROM alunos a WHERE ra IN (SELECT ra FROM rel_turmas_alunos WHERE fk_turma = '".$_GET['id']."') ORDER BY a.nome";
+				    	$result = mysql_query($query);
+				    	if(mysql_num_rows($result) > 0){
+				    		while ($row = mysql_fetch_array($result)) {
+				    			echo "<p> ".$row['ra']." - <b>".$row['nome']."</b></p>";
+				    		}
+				    	}
+				    ?>
+				  </div>
+				  <div class="modal-footer">
+				    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+				  </div>
 				</div>
-				 
-				 
-				<!-- mascara para cobrir o site -->  
-				<div id="mascara"></div>
 
 
 				<div class="row">
@@ -195,7 +242,7 @@ if($_SESSION['permissao'] > 0)
 					$i = 0;
 					
 					$db = conectaBD();	
-					$query = "SELECT count(*),date_format(data_inicio, '%m/%Y') as data FROM horarios WHERE fk_turma = ".$_GET['id']." group by date_format(data_inicio, '%m/%Y') order by data_inicio desc";
+					$query = "SELECT count(*),date_format(data_inicio, '%m/%Y') as data FROM horarios WHERE fk_turma = ".$_GET['id']." group by date_format(data_inicio, '%m/%Y') order by data_inicio";
 					$result = mysql_query($query);
 				
 					while ($row = mysql_fetch_array($result))
@@ -205,18 +252,50 @@ if($_SESSION['permissao'] > 0)
 
 						$aba[$i] .= $row['data']; 
 
-
-						$query = "SELECT pk_horario, DATE_FORMAT(data_inicio, '%d às %h:%i') as data_inicio FROM horarios WHERE fk_turma = ".$_GET['id']." AND DATE_FORMAT(data_inicio, '%m/%Y') = '".$row['data']."' order by data_inicio desc";
+						if($_SESSION['permissao'] == 1)
+							$query = "SELECT pk_horario, DATE_FORMAT(data_inicio, '%d às %h:%i') as data_inicio, data_inicio data_aula, data_fim, NOW() as agora, ra FROM horarios LEFT JOIN presentes ON pk_horario = fk_horario AND ra = '".$_SESSION['usuario']."' WHERE fk_turma = ".$_GET['id']." AND DATE_FORMAT(data_inicio, '%m/%Y') = '".$row['data']."' order by data_inicio";
+						else 
+							$query = "SELECT pk_horario, DATE_FORMAT(data_inicio, '%d às %h:%i') as data_inicio, data_inicio data_aula, NOW() as agora FROM horarios WHERE fk_turma = ".$_GET['id']." AND DATE_FORMAT(data_inicio, '%m/%Y') = '".$row['data']."' order by data_inicio";
+						
 						$result3 = mysql_query($query);
 
-						while ($row2 = mysql_fetch_array($result3))
-						{
-							$aba_conteudo[$i] .= "<div><a href='turma.php?id=".$_GET['id']."&del=".$row2['pk_horario']."'><i class='icon-remove'></i></a> <a href='presenca.php?id=".$_GET['id']."&horario=".$row2['pk_horario']."'>Aula do dia ".$row2['data_inicio']."";
+						if($_SESSION['permissao'] == 1){
+							while ($row2 = mysql_fetch_array($result3))
+							{
+								if($row2['ra'] != NULL)
+									$aba_conteudo[$i] .= "<div><i class='icon-ok'></i> <b>Presente</b> - ";
+								else
+								{
+									if($row2['agora'] > $row2['data_fim'])
+										$aba_conteudo[$i] .= "<div><i class='icon-ok'></i> <b>Falta</b> - ";
+									else 
+										$aba_conteudo[$i] .= "<div><i class='icon-calendar'></i> ";
+								}
+									
 
-							$aba_conteudo[$i] .= "</a></div>";
-							
+								$aba_conteudo[$i] .= "Aula do dia ".$row2['data_inicio']."";
+								$aba_conteudo[$i] .= "</div>";
+							}
+						}else if($_SESSION['permissao'] == 2){
+							while ($row2 = mysql_fetch_array($result3))
+							{
+								if($row2['agora'] > $row2['data_aula'])
+									$aba_conteudo[$i] .= "<div><a href='presenca.php?id=".$_GET['id']."&horario=".$row2['pk_horario']."'>Aula do dia ".$row2['data_inicio']."</a>";
+								else
+									$aba_conteudo[$i] .= "<div>Aula do dia ".$row2['data_inicio']."";
+								$aba_conteudo[$i] .= "</div>";
+							}
+						} else if($_SESSION['permissao'] == 10){
+							while ($row2 = mysql_fetch_array($result3))
+							{
+								$aba_conteudo[$i] .= "<div><a href='turma.php?id=".$_GET['id']."&del=".$row2['pk_horario']."'><i class='icon-remove'></i></a>";
+								if($row2['agora'] > $row2['data_aula'])
+									$aba_conteudo[$i] .= "<a href='presenca.php?id=".$_GET['id']."&horario=".$row2['pk_horario']."'>Aula do dia ".$row2['data_inicio']."</a>";
+								$aba_conteudo[$i] .= "Aula do dia ".$row2['data_inicio']."";
+								$aba_conteudo[$i] .= "</div>";
+							}
 						}
-
+						
 
 						$i++;
 
@@ -295,21 +374,40 @@ if($_SESSION['permissao'] > 0)
 			$row = mysql_fetch_array($result);
 			$num_turma = $row['numero'];
 			?>
-			<form action="turma.php?id=<?php echo $_GET['id'];?>" method="post" id="formMateria" name="formMateria" class="form-horizontal" onSubmit="return verificaFormMateria(this);">
+			<form action="turma.php?id=<?php echo $_GET['id'];?>" method="post" id="formAddAula" name="formAddAula" class="form-horizontal" onSubmit="return verificaFormAddAula(this);">
 				<div class="row">
 					<div class="span6">
 						<div class="control-group">
 							<label class ="control-label"></label>
 							<div class="controls"><h4>Nova aula - Turma <?php echo $row['numero']?></h4></div>
 						</div>
+						<?php
+						$db = conectaBD();
+						$query = "SELECT * FROM salas";
+						$result = mysql_query($query);
+						?>
+						<div class="control-group">
+							<label class ="control-label">Sala:</label>
+							<div class="controls">
+								<select name="sala">
+										<option value="0">Selecione um Sala</option>
+									<?php
+									while($sala = mysql_fetch_array($result)){ ?>
+								    	<option value="<?php echo $sala['pk_sala']?>" <?php if($sala['pk_sala'] == $row['fk_sala']) echo 'selected'; ?>><?php echo $sala['nome'];?></option>
+								    	<?php
+								    } ?>
+								</select>
+							</div>
+						</div>
 
 						<div class="control-group">
 							<label class ="control-label"></label>
-							 <div class="controls"><input type="checkbox" name="dia"> Segunda-Feira</div>
-							 <div class="controls"><input type="checkbox" name="dia"> Terça-Feira</div>
-							 <div class="controls"><input type="checkbox" name="dia"> Quarta-Feira</div>
-							 <div class="controls"><input type="checkbox" name="dia"> Quinta-Feira</div>
-							 <div class="controls"><input type="checkbox" name="dia"> Sexta-Feira</div>
+							 <div class="controls"><input type="checkbox" name="dia[]" value = "1"> Segunda-Feira</div>
+							 <div class="controls"><input type="checkbox" name="dia[]" value = "2"> Terça-Feira</div>
+							 <div class="controls"><input type="checkbox" name="dia[]" value = "3"> Quarta-Feira</div>
+							 <div class="controls"><input type="checkbox" name="dia[]" value = "4"> Quinta-Feira</div>
+							 <div class="controls"><input type="checkbox" name="dia[]" value = "5"> Sexta-Feira</div>
+							 <div class="controls"><input type="checkbox" name="dia[]" value = "6"> Sábado</div>
 						</div>
 
 						<div class="control-group">
@@ -363,7 +461,7 @@ if($_SESSION['permissao'] > 0)
 
 						<div class="control-group">
 							<label class ="control-label"></label>
-							<div class="controls"><input class="btn btn-large btn-primary" type="submit" name="cadastrarAlunos" value="Enviar" /></div>
+							<div class="controls"><input class="btn btn-large btn-primary" type="submit" name="enviarNovaAula" value="Enviar" /></div>
 						</div>
 					</div> <!-- span6-->
 
@@ -440,20 +538,23 @@ if($_SESSION['permissao'] > 0)
 						<?php
 
 						$db = conectaBD();
-						$query="SELECT * FROM `alunos` WHERE 1 order by nome";
+						$query="SELECT a.*, r.fk_turma FROM `alunos` a LEFT JOIN rel_turmas_alunos r ON a.ra = r.ra WHERE 1";
 						$result = mysql_query($query);
+						$result2 = mysql_query($query);
 						desconectaBD($db);
 						
-
 						while($row = mysql_fetch_array($result)) {
-
-						echo '
-							<tr id="item_' . $row['ra'] . '" class="itens_tabela">
-								<td>' . $row['ra'] .'</td>
-								<td class="nome">' . $row['nome'] . '</td>
-								<td> <a class="btn btn-small" onClick="insereAlunoTurma(' . $row['ra'] . ', \'' . $row['nome'] . '\');"><i class="icon-chevron-right" ></i></a> </td>
-							</tr>
-							';
+							if($row['fk_turma'] == $_GET['id']){
+								$hide = 'style="display:none"';
+							}
+							else $hide = '';
+							echo '
+								<tr id="item_' . $row['ra'] . '" class="itens_tabela" '.$hide.'>
+									<td>' . $row['ra'] .'</td>
+									<td class="nome">' . $row['nome'] . '</td>
+									<td> <a class="btn btn-small" onClick="insereAlunoTurma(' . $row['ra'] . ', \'' . $row['nome'] . '\');"><i class="icon-chevron-right" ></i></a> </td>
+								</tr>
+								';
 						}
 						?>
 						</tbody>
@@ -476,12 +577,18 @@ if($_SESSION['permissao'] > 0)
 							</tbody>
 
 						</table>
-
-
 						<br/>
 						<div class="well well-small">
-						<b>Total de alunos:</b> <span id="qtd_alunos">0</span></td></tr>
+						<b>Total de alunos na turma:</b> <span id="qtd_alunos">0</span></td></tr>
 						</div>
+
+						<?php
+						while($row = mysql_fetch_array($result2)) {
+							if($row['fk_turma'] == $_GET['id']){
+								echo '<script>insereAlunoTurma(' . $row['ra'] . ', \'' . $row['nome'] . '\');</script>';
+							}
+						}
+						?>
 
 
 						<div class="control-group">
@@ -498,8 +605,7 @@ if($_SESSION['permissao'] > 0)
 	}
 	else
 	{
-			echo "C";
-		// echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;URL=./'>";
+		echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;URL=./turmas.php'>";
 	}
 
 } // if permissao
