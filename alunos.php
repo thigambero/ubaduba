@@ -4,7 +4,6 @@
 	function verificaFormAluno(cad){ // validar
 		with(document.formAluno){ // with
 			if(ra.value == ''){alert('O preenchimento do ra é obrigatório !');ra.focus();return false;}
-			if(senha.value == ''){alert('O preenchimento da senha é obrigatório !');senha.focus();return false;}	
 			if(nome.value == ''){alert('O preenchimento do nome é obrigatório !');nome.focus();return false;}
 		  	if(email.value == ''){alert('O preenchimento do e-mail é obrigatório !');email.focus();return false;}	
 		  	if(curso.value == '0'){alert('O preenchimento do curso é obrigatório !');curso.focus();return false;}	
@@ -22,6 +21,19 @@ if($_SESSION['permissao'] > 0)
 		$sexo = $_POST['sexo'];
 		$email = $_POST['email'];
 		$curso = $_POST['curso'];
+
+		$p34 = $_POST['p34'];
+		$p35 = $_POST['p35'];
+		$p36 = $_POST['p36'];
+		$p37 = $_POST['p37'];
+		$p38 = $_POST['p38'];
+		$p39 = $_POST['p39'];
+		$p40 = $_POST['p40'];
+		$p41 = $_POST['p41'];
+		$p42 = $_POST['p42'];
+		$p43 = $_POST['p43'];
+		$p44 = $_POST['p44'];
+
 		if($_POST['senha'] == "Não Alterar")$senha = "";
 		else $senha = md5($_POST['senha']);
 
@@ -43,6 +55,10 @@ if($_SESSION['permissao'] > 0)
 				if($result){
 					$query = "INSERT INTO logins (usuario, senha, permissao) VALUES ('$ra', '$senha', '1')";
 					$result = mysql_query($query);
+
+					$query = "INSERT INTO tags (usuario, tipo, p35, p36, p37, p38, p39, p40, p41, p42, p43, p44) VALUES ($ra, 1, $p35, $p36, $p37, $p38, $p39, $p40, $p41, $p42, $p43, $p44)";
+					$result = mysql_query($query);
+
 					$aviso_sucesso = "Aluno cadastrado com sucesso!";
 				}
 				else $aviso_erro = "Houve um erro no cadastro, tente novamente!";
@@ -58,6 +74,10 @@ if($_SESSION['permissao'] > 0)
 				$query = "UPDATE logins SET senha = '$senha' WHERE usuario = '$id' AND permissao = 1";
 				$result2 = mysql_query($query);
 			}
+
+			$query = "UPDATE tags SET p35 = $p35, p36 = $p36, p37 = $p37, p38 = $p38, p39 = $p39, p40 = $p40, p41 = $p41, p42 = $p42, p43 = $p43, p44 = $p44 WHERE usuario = '".$_POST['oque']."' AND tipo = 1";
+			$result2 = mysql_query($query);
+
 			desconectaBD($db);
 			if($result)$aviso_sucesso = "Aluno atualizado com sucesso";
 			else $aviso_erro = "Houve um erro na edicão, tente novamente!";
@@ -68,7 +88,7 @@ if($_SESSION['permissao'] > 0)
 	if(is_numeric($_GET['id']))
 	{
 		$db = conectaBD();
-		$query="SELECT * FROM `alunos` WHERE `ra` = '".$_GET['id']."' limit 1";
+		$query="SELECT * FROM `alunos` INNER JOIN tags ON usuario = ra AND tipo = 1 WHERE `ra` = '".$_GET['id']."' limit 1";
 		$result = mysql_query($query);
 		$row = mysql_fetch_array($result);
 		desconectaBD($db);
@@ -158,17 +178,58 @@ if($_SESSION['permissao'] > 0)
 						</div>
 					</div>
 
+				</div> <!-- span6-->
+				<div class="span6">
+					<div class="control-group">
+						<label class ="control-label" >P[35]:</label>
+						<div class="controls"><input class="input-small" type="text" id="p35" name="p35" value="<?php echo $row['p35']; ?>" required/></div>
+					</div>
+					<div class="control-group">
+						<label class ="control-label" >P[36]:</label>
+						<div class="controls"><input class="input-small" type="text" id="p36" name="p36" value="<?php echo $row['p36']; ?>" required/></div>
+					</div>
+					<div class="control-group">
+						<label class ="control-label" >P[37]:</label>
+						<div class="controls"><input class="input-small" type="text" id="p37" name="p37" value="<?php echo $row['p37']; ?>" required/></div>
+					</div>
+					<div class="control-group">
+						<label class ="control-label" >P[38]:</label>
+						<div class="controls"><input class="input-small" type="text" id="p38" name="p38" value="<?php echo $row['p38']; ?>" required/></div>
+					</div>
+					<div class="control-group">
+						<label class ="control-label" >P[39]:</label>
+						<div class="controls"><input class="input-small" type="text" id="p39" name="p39" value="<?php echo $row['p39']; ?>" required/></div>
+					</div>
+					<div class="control-group">
+						<label class ="control-label" >P[40]:</label>
+						<div class="controls"><input class="input-small" type="text" id="p40" name="p40" value="<?php echo $row['p40']; ?>" required/></div>
+					</div>
+					<div class="control-group">
+						<label class ="control-label" >P[41]:</label>
+						<div class="controls"><input class="input-small" type="text" id="p41" name="p41" value="<?php echo $row['p41']; ?>" required/></div>
+					</div>
+					<div class="control-group">
+						<label class ="control-label" >P[42]:</label>
+						<div class="controls"><input class="input-small" type="text" id="p42" name="p42" value="<?php echo $row['p42']; ?>" required/></div>
+					</div>
+					<div class="control-group">
+						<label class ="control-label" >P[43]:</label>
+						<div class="controls"><input class="input-small" type="text" id="p43" name="p43" value="<?php echo $row['p43']; ?>" required/></div>
+					</div>
+					<div class="control-group">
+						<label class ="control-label" >P[44]:</label>
+						<div class="controls"><input class="input-small" type="text" id="p44" name="p44" value="<?php echo $row['p44']; ?>" required/></div>
+					</div>
+					
 					<div class="control-group">
 						<label class ="control-label"></label>
 						<div class="controls"></div>
 					</div>
-
-
 					<div class="control-group">
 						<label class ="control-label"></label>
 						<div class="controls"><input class="btn btn-large btn-primary" type="submit" name="enviar" value="Enviar" /></div>
 					</div>
-				</div> <!-- span6-->
+				</div>
 
 			</div> <!-- row -->
 			</form>
